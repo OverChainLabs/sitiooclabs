@@ -59,10 +59,10 @@ exports.postMail = async (req, res) => {
       console.log("Transporrter: ", transporter)
 
       let mailOptions = {
-        from: `"Asunto 😻" <${process.env.REACT_APP_MAIL}>`, // sender address
+        from: process.env.REACT_APP_MAIL, // sender address
         replyTo: body.email,
         to: process.env.REACT_APP_MAIL, // list of receivers
-        subject: body.subject, // Subject line
+        subject: '😻' + body.subject, // Subject line
         text: 'Teléfono: ' + body.telephone, // plain text body
         html: '<b>' + body.message + '</b>' // html body
       };
